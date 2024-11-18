@@ -21,4 +21,14 @@
   	<url-pattern>/helloWorld</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>addtionServlet</servlet-name>
+  	<servlet-class>com.bharath.servlets.AdditionServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>addtionServlet</servlet-name>
+  	<url-pattern>/addtion</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
