@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+//@WebServlet(urlPatterns = { "/helloWorld", "/" })
 public class HelloWorldServlet extends GenericServlet {
 	@Override
 	public void service(ServletRequest req, ServletResponse res) 
