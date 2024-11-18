@@ -1,0 +1,42 @@
+# Bỏ qua các thư mục và tệp của Tomcat trong thư mục Servers
+/Servers/logs/
+/Servers/work/
+/Servers/temp/
+/Servers/*.log
+/Servers/*.war
+
+# Bỏ qua thư mục và tệp biên dịch của Servlet project
+/ServletApp/bin/
+/ServletApp/target/
+/ServletApp/build/
+
+# Bỏ qua các tệp của Web Dynamic Application version 4.0
+/ServletApp/.settings/
+/ServletApp/.project
+/ServletApp/.classpath
+/ServletApp/.deploy/
+*.war
+*.ear
+
+# Bỏ qua thư mục và tệp metadata ở cấp gốc của dự án
+/.metadata/
+
+# Bỏ qua thư mục và tệp metadata của các IDE khác (Eclipse, IntelliJ, NetBeans)
+/ServletApp/.idea/
+/ServletApp/.vscode/
+/ServletApp/.project
+/ServletApp/.metadata
+/ServletApp/*.iml
+/ServletApp/nbproject/
+
+# Bỏ qua các tệp tạm thời và hệ thống
+/ServletApp/*.swp
+/ServletApp/tmp/
+/ServletApp/.DS_Store
+
+# Bỏ qua các tệp cấu hình không cần thiết của Maven hoặc Gradle
+/ServletApp/.mvn/
+/ServletApp/*.jar
+
+# Bỏ qua các tệp cấu hình tài khoản người dùng
+/ServletApp/.env
