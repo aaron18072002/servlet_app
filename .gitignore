@@ -43,3 +43,4 @@
 
 # Bỏ qua thư mục và tệp biên dịch của JDBC project
 /JDBCBasics/bin/
+/JDBCBasics/*.jar
