@@ -57,9 +57,6 @@ public class ReadUserServlet extends HttpServlet {
 			while (rs.next()) {
 				out.print("<tr>");
 					out.print("<th>");
-						out.println(rs.getString(1));
-					out.print("</th>");
-					out.print("<th>");
 						out.println(rs.getString(2));
 					out.print("</th>");
 					out.print("<th>");
@@ -67,6 +64,9 @@ public class ReadUserServlet extends HttpServlet {
 					out.print("</th>");
 					out.print("<th>");
 						out.println(rs.getString(4));
+					out.print("</th>");
+					out.print("<th>");
+						out.println(rs.getString(5));
 					out.print("</th>");
 				out.print("</tr>");
 			}
