@@ -7,11 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class AccountDAO {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
+		Connection connection = null;
+		Statement statement = null;
 		try {
-			Connection connection = DriverManager.getConnection
+			connection = DriverManager.getConnection
 					("jdbc:mysql://localhost/mysql","root","123456");
-			Statement statement = connection.createStatement();
+			statement = connection.createStatement();
 			
 			int insertedResult = statement.executeUpdate
 					("""
@@ -51,6 +53,11 @@ public class AccountDAO {
 //			System.out.printf("%d rows affected", result).println();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
+		} finally {
+			if(statement != null && connection != null && connection.isClosed() == false) {
+				connection.close();
+				statement.closeOnCompletion();
+			}
 		}
 	}
 }
