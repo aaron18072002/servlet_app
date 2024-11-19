@@ -45,3 +45,4 @@
 /JDBCBasics/bin/
 /JDBCBasics/lib
 /JDBCBasics/lib/*.jar
+/JDBCBasics/.settings/
