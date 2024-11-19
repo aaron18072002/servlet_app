@@ -46,7 +46,7 @@ public class CreateUserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {		
 		String firstName = req.getParameter("firstName");
-		String lastName = req.getParameter("firstName");
+		String lastName = req.getParameter("lastName");
 		String password = req.getParameter("password");
 		String email = req.getParameter("email");
 		try(Statement statement = this.connection.createStatement()) {
@@ -58,7 +58,7 @@ public class CreateUserServlet extends HttpServlet {
 			
 			PrintWriter out = res.getWriter();
 			if(result > 0) {				
-				out.printf("<h1>%d user have inserted</h1>", result).println();
+				out.println("<h1>User have inserted</h1>");
 			} else {
 				out.println("<h1>Error while inserting user</h1>");
 			}
