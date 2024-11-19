@@ -1,6 +1,7 @@
 package com.bharath.user.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,11 +21,24 @@ public class CreateUserServlet extends HttpServlet {
 	public void init() throws ServletException {		
 		super.init();
 		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection
 					("jdbc:mysql://localhost/servlet_app", "root", "123456");
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		PrintWriter out = res.getWriter();
+		out.println("<html>");
+		out.println("<body>");
+		out.println("<h1>Hello World!</h1>");
+		out.println("</body>");
+		out.println("</html>");
 	}
 	
 	@Override
