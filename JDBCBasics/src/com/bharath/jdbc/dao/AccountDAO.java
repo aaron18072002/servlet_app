@@ -2,6 +2,7 @@ package com.bharath.jdbc.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -15,16 +16,27 @@ public class AccountDAO {
 			int insertedResult = statement.executeUpdate
 					("""
 						INSERT INTO ACCOUNT(accno,lastname,firstname,bal)
-						VALUES (3,'Lebron','James',12000);
+						VALUES (1000,'A','B',12000);
 							""");
 			System.out.printf("%d rows affected", insertedResult).println();
 			
 			int deletedResult = statement.executeUpdate
 					(""" 
 						DELETE FROM ACCOUNT
-						WHERE accno = 3;	
+						WHERE accno = 1000;	
 							""");
 			System.out.printf("%d rows affected", deletedResult).println();
+			
+			System.out.println("-------------------");
+			
+			ResultSet rs = statement.executeQuery("SELECT * FROM ACCOUNT");
+			while(rs.next()) {
+				System.out.println(rs.getInt(1));
+				System.out.println(rs.getString(2));
+				System.out.println(rs.getString(3));
+				System.out.println(rs.getInt(4));
+				System.out.println("--------------------");
+			}
 			
 //			int result = statement.executeUpdate
 //					("""
