@@ -44,3 +44,35 @@
 # Bỏ qua thư mục và tệp biên dịch của JDBC project
 /JDBCBasics/bin/
 /JDBCBasics/.settings/
+
+# Bỏ qua thư mục và tệp biên dịch của Servlet project
+/UserApp/bin/
+/UserApp/target/
+/UserApp/build/
+
+# Bỏ qua các tệp của Web Dynamic Application version 4.0
+/UserApp/.settings/
+/UserApp/.project
+/UserApp/.classpath
+/UserApp/.deploy/
+
+
+# Bỏ qua thư mục và tệp metadata của các IDE khác (Eclipse, IntelliJ, NetBeans)
+/UserApp/.idea/
+/UserApp/.vscode/
+/UserApp/.project
+/UserApp/.metadata
+/UserApp/*.iml
+/UserApp/nbproject/
+
+# Bỏ qua các tệp tạm thời và hệ thống
+/UserApp/*.swp
+/UserApp/tmp/
+/UserApp/.DS_Store
+
+# Bỏ qua các tệp cấu hình không cần thiết của Maven hoặc Gradle
+/UserApp/.mvn/
+/UserApp/*.jar
+
+# Bỏ qua các tệp cấu hình tài khoản người dùng
+/UserApp/.env
