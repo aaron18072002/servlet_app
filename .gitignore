@@ -76,3 +76,38 @@
 
 # Bỏ qua các tệp cấu hình tài khoản người dùng
 /UserApp/.env
+
+
+# ------------------------------
+
+# Bỏ qua thư mục và tệp biên dịch của Servlet project
+/PreparedStatement/bin/
+/PreparedStatement/target/
+/PreparedStatement/build/
+
+# Bỏ qua các tệp của Web Dynamic Application version 4.0
+/PreparedStatement/.settings/
+/PreparedStatement/.project
+/PreparedStatement/.classpath
+/PreparedStatement/.deploy/
+
+
+# Bỏ qua thư mục và tệp metadata của các IDE khác (Eclipse, IntelliJ, NetBeans)
+/PreparedStatement/.idea/
+/PreparedStatement/.vscode/
+/PreparedStatement/.project
+/PreparedStatement/.metadata
+/PreparedStatement/*.iml
+/PreparedStatement/nbproject/
+
+# Bỏ qua các tệp tạm thời và hệ thống
+/PreparedStatement/*.swp
+/PreparedStatement/tmp/
+/PreparedStatement/.DS_Store
+
+# Bỏ qua các tệp cấu hình không cần thiết của Maven hoặc Gradle
+/PreparedStatement/.mvn/
+/PreparedStatement/*.jar
+
+# Bỏ qua các tệp cấu hình tài khoản người dùng
+/PreparedStatement/.PreparedStatement
