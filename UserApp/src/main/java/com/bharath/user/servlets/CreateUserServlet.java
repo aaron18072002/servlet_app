@@ -6,8 +6,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Enumeration;
+import java.util.Iterator;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -23,11 +26,13 @@ import javax.servlet.http.HttpServletResponse;
 public class CreateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection connection;
+	private ServletConfig config = null;
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {		
 		super.init();
-		try {
+		this.config = config;
+		try {			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection
 					(config.getInitParameter("dbUrl"),
@@ -42,7 +47,14 @@ public class CreateUserServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		ServletContext sc = this.config.getServletContext();
+		Enumeration<String> paramNames = sc.getInitParameterNames();
 		PrintWriter out = res.getWriter();
+		while(paramNames.hasMoreElements()) {
+			String name = paramNames.nextElement();
+			out.println(name);
+			out.println(sc.getInitParameter(name));
+		}
 		out.println("<html>");
 		out.println("<body>");
 		out.println("<h1>Hello World!</h1>");

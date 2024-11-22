@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,11 +23,15 @@ public class ReadUserServlet extends HttpServlet {
 	private Connection connection;
 	
 	@Override
-	public void init() throws ServletException {
+	public void init(ServletConfig config) throws ServletException {		
+		super.init();
 		try {
+			ServletContext sc = config.getServletContext();
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection
-					("jdbc:mysql://localhost/servlet_app", "root", "123456");
+					(sc.getInitParameter("dbUrl"),
+					 sc.getInitParameter("dbUser"),
+					 sc.getInitParameter("dbPassword"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
