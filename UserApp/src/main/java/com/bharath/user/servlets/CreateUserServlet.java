@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -24,12 +25,14 @@ public class CreateUserServlet extends HttpServlet {
 	private Connection connection;
 	
 	@Override
-	public void init() throws ServletException {		
+	public void init(ServletConfig config) throws ServletException {		
 		super.init();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection
-					("jdbc:mysql://localhost/servlet_app", "root", "123456");
+					(config.getInitParameter("dbUrl"),
+					 config.getInitParameter("dbUser"),
+					 config.getInitParameter("dbPassword"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
