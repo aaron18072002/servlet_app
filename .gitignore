@@ -111,3 +111,37 @@
 
 # Bỏ qua các tệp cấu hình tài khoản người dùng
 /PreparedStatement/.PreparedStatement
+
+#------------------------------------
+
+# Bỏ qua thư mục và tệp biên dịch của Servlet project
+/InterServletCommunication/bin/
+/InterServletCommunication/target/
+/InterServletCommunication/build/
+
+# Bỏ qua các tệp của Web Dynamic Application version 4.0
+/InterServletCommunication/.settings/
+/InterServletCommunication/.project
+/InterServletCommunication/.classpath
+/InterServletCommunication/.deploy/
+
+
+# Bỏ qua thư mục và tệp metadata của các IDE khác (Eclipse, IntelliJ, NetBeans)
+/InterServletCommunication/.idea/
+/InterServletCommunication/.vscode/
+/InterServletCommunication/.project
+/InterServletCommunication/.metadata
+/InterServletCommunication/*.iml
+/InterServletCommunication/nbproject/
+
+# Bỏ qua các tệp tạm thời và hệ thống
+/InterServletCommunication/*.swp
+/InterServletCommunication/tmp/
+/InterServletCommunication/.DS_Store
+
+# Bỏ qua các tệp cấu hình không cần thiết của Maven hoặc Gradle
+/InterServletCommunication/.mvn/
+/InterServletCommunication/*.jar
+
+# Bỏ qua các tệp cấu hình tài khoản người dùng
+/InterServletCommunication/.PreparedStatement
